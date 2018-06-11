@@ -1,18 +1,23 @@
 {
   "name": "КиноПлеер",
   "description": "Расширение позволяет смотреть фильмы с кинопоиска онлайн в один клик",
-  "version": "1.0.9",
+  "version": "1.1.0",
   "permissions": [
-    "webRequest",
-    "activeTab",
-    "tabs",
-    "https://kinopoisk.ru/"
+    "https://www.kinopoisk.ru/film/*"
   ],
   "browser_action": {
     "default_icon": "icons/inactive.png"
   },
-  "background": {
-    "scripts" : ["assets/jquery.min.js", "js/background.js"]
-  },
+  "web_accessible_resources": [
+    "pages/player.html",
+    "icons/*"
+  ],
+  "content_scripts": [
+    {
+      "matches": ["https://www.kinopoisk.ru/film/*","https://kinopoisk.ru/film/*"],
+      "run_at": "document_start",
+      "js": ["assets/jquery.min.js", "js/content.js"]
+    }
+  ],
   "manifest_version": 2
 }
