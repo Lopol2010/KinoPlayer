@@ -1,7 +1,7 @@
 
 var code = getCode(window.location.href);
 function getCode(url) {
-        var id = url.split("-").slice(-1)[0].slice(0, -1);
+        var id = url.match(/[\d]+(?=\/$)/g)[0];
         if (/^\d+$/.test(id) == false) {
             return null;
         }
