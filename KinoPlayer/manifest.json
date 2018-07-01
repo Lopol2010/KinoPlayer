@@ -1,7 +1,7 @@
 {
   "name": "КиноПлеер",
   "description": "Расширение позволяет смотреть фильмы с кинопоиска онлайн в один клик",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "permissions": [
     "https://www.kinopoisk.ru/film/*"
   ],
